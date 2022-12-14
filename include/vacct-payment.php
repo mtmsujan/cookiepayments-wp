@@ -36,6 +36,7 @@ add_shortcode('vacct-details', function(){
 	$ACCOUNTNO = get_post_meta($order_id, '_ACCOUNTNO', true);
 	$RECEIVERNAME = get_post_meta($order_id, '_RECEIVERNAME', true);
 	$DEPOSITENDDATE = get_post_meta($order_id, '_DEPOSITENDDATE', true);
+	$AMOUNT = get_post_meta($order_id, '_AMOUNT', true);
 
 	ob_start(); ?>
 
@@ -44,20 +45,20 @@ add_shortcode('vacct-details', function(){
 		<table class="wp-list-table widefat fixed striped posts">
 			<tbody>
 				<tr>
-					<th><strong><?php esc_html_e('Transaction ID.', 'cookie') ;?></strong></th>
-					<td>: <?php echo esc_attr( $TID );?></td>
+					<th><strong><?php esc_html_e('은행', 'cookie') ;?></strong></th>
+					<td> <?php echo esc_attr( $CARDNAME );?></td>
 				</tr>
 				<tr>
-					<th><strong><?php esc_html_e('Card Name.', 'cookie') ;?></strong></th>
-					<td>: <?php echo esc_attr( $CARDNAME );?></td>
+					<th><strong><?php esc_html_e('계좌번호', 'cookie') ;?></strong></th>
+					<td> <?php echo esc_attr( $ACCOUNTNO );?></td>
 				</tr>
 				<tr>
-					<th><strong><?php esc_html_e('Account no.', 'cookie') ;?></strong></th>
-					<td>: <?php echo esc_attr( $ACCOUNTNO );?></td>
+					<th><strong><?php esc_html_e('입금자명', 'cookie') ;?></strong></th>
+					<td> <?php echo esc_attr( $RECEIVERNAME );?></td>
 				</tr>
 				<tr>
-					<th><strong><?php esc_html_e('Receiver name.', 'cookie') ;?></strong></th>
-					<td>: <?php echo esc_attr( $RECEIVERNAME );?></td>
+					<th><strong><?php esc_html_e('입금액', 'cookie') ;?></strong></th>
+					<td> <?php echo esc_attr( $AMOUNT );?></td>
 				</tr>
 			</tbody>
 		</table>
@@ -159,6 +160,7 @@ add_action('wp_head', function(){
 					$ACCOUNTNO = isset( $_REQUEST['ACCOUNTNO'] ) ? $_REQUEST['ACCOUNTNO'] : '';
 					$RECEIVERNAME = isset( $_REQUEST['RECEIVERNAME'] ) ? $_REQUEST['RECEIVERNAME'] : '';
 					$DEPOSITENDDATE = isset( $_REQUEST['DEPOSITENDDATE'] ) ? $_REQUEST['DEPOSITENDDATE'] : '';
+					$AMOUNT = isset( $_REQUEST['AMOUNT'] ) ? $_REQUEST['AMOUNT'] : '';
 			
 					update_post_meta($order_id, '_TID', $TID);
 					update_post_meta($order_id, '_ACCEPTDATE', $ACCEPTDATE);
@@ -168,6 +170,7 @@ add_action('wp_head', function(){
 					update_post_meta($order_id, '_ACCOUNTNO', $ACCOUNTNO);
 					update_post_meta($order_id, '_RECEIVERNAME', $RECEIVERNAME);
 					update_post_meta($order_id, '_DEPOSITENDDATE', $DEPOSITENDDATE);
+					update_post_meta($order_id, '_AMOUNT', $AMOUNT);
 			
 
 
