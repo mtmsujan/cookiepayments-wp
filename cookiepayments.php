@@ -6,6 +6,7 @@
  * Author: Sabbir Hossain
  * Author URI: https://github.com/devsabbirhossain
  * Version: 1.0.0
+ * Textdomain: cookie
  */
 
 if(file_exists(plugin_dir_path( __FILE__ ) . '/include/card-payment.php')){
