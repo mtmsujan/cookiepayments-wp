@@ -3,8 +3,8 @@
  * Plugin Name: WooCommerce CookiePayments Gateway
  * Plugin URI: https://softtechiit.com
  * Description: Take payment by cookiepayments on your store.
- * Author: Sabbir Hossain
- * Author URI: https://github.com/devsabbirhossain
+ * Author: Mohammad Toriqul Mowla Sujan
+ * Author URI: https://softtechitltd.com
  * Version: 1.0.0
  * Textdomain: cookie
  */
